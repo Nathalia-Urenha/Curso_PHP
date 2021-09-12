@@ -1,0 +1,15 @@
+{
+  "name": "nathalia/composer",
+  "description": "Aula de PHP 7",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Nathalia-Urenha",
+      "email": "naty.urenha@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "monolog/monolog": "1.0.*"
+  }
+}
