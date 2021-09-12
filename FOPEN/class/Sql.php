@@ -1,7 +1,10 @@
 <?php 
 
+//ESSA CLASSE BASICAMENTE FORMATA OS COMANDOS SQL
+
 class Sql extends PDO {
 
+  //conexão
 	private $conn;
 
 	public function __construct(){
@@ -10,6 +13,7 @@ class Sql extends PDO {
 
 	}
 
+  //setando varios parametros
 	private function setParams($statement, $parameters = array()){
 
 		foreach ($parameters as $key => $value) {
@@ -20,12 +24,16 @@ class Sql extends PDO {
 
 	}
 
+
+  //setando um parametro
 	private function setParam($statement, $key, $value){
 
 		$statement->bindParam($key, $value);
 
 	}
 
+  //comando sql
+  //rawQuery é o tipo do comando sql (update, delete, select, etc)
 	public function query($rawQuery, $params = array()){
 
 		$stmt = $this->conn->prepare($rawQuery);
@@ -38,6 +46,7 @@ class Sql extends PDO {
 
 	}
 
+  //SELECT
 	public function select($rawQuery, $params = array()):array
 	{
 
